@@ -1,0 +1,38 @@
+<div class="col-lg-6" >
+    <div class= "card shadow" >
+        <div class = "card_body">
+            <p class="lead"><%=@workshop_count%> Total Workshops</p>
+            <p class="lead"><%=@upcoming_workshop_count%> Total Upcoming Workshops</p>
+            <p class="lead"><%=@past_workshop_count%> Total Workshops Organized Recently</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3" >
+    <div class= "card shadow" >
+        <div class = "card_body">
+            <p class="lead"><%=@booking_count%> Total Bookings</p>
+            <p class="lead"><%=@revenue_earned%> Total Revenue</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3" >
+    <div class= "card shadow" >
+        <div class = "card_body">
+            <p class="lead"><%=@customer_count%> Total Customer</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 mt-5" >
+    <div class= "card shadow" >
+        <div class = "card_body">
+            <p class="lead fw-bold"> Total Refundable Workshops <%= @refundable_booking.count %></p>
+            <% @refundable_booking.each do |booking| %>
+            <p class="lead"> <%= link_to booking.workshop.name, admin_booking_path(booking)%> </p>
+            <%end%>
+        </div>
+    </div>
+</div>
+
